@@ -45,4 +45,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag "template" Jekyll::HandlebarsTags::Template
+Liquid::Template.register_tag "template", Jekyll::HandlebarsTags::Template
