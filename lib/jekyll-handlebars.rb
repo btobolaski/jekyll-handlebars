@@ -35,10 +35,10 @@ module Jekyll
   end
 
   module HandlebarsTags
-    def template(input)
+    def template input
       "<script src=\"/assets/templates/#{input}.js\"></script>"
     end
   end
 end
 
-Liquid::Template.register_filter(Jekyll::HandlebarsTags)
+Liquid::Template.register_filter Jekyll::HandlebarsTags
