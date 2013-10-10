@@ -36,14 +36,13 @@ to your Gemfile. Create a plugin file that looks like this in you `_plugins` dir
 
 Make a directory for handlebars templates `_assets/templates`. All of your templates should end
 with `.template`. You'll also have to manually include [the handlebars runtime][1]
-([direct link][2]) in your layouts. You'll also have to manually include each template in your
-layout. They end up in `/assets/templates/<name>.js`. Be sure to include the runtime first or the
-template won't work.
+([direct link][2]) in your layouts. After the runtime, include the liquid tag for your template. If
+your template is `example.template` the liquid tag will be `{% template example %}`.
 
 ## Improvements
 
 1. Include Handlebars to not force people to manually manage dependencies
-2. Add liquid tags for templates so people don't need to manually add templates to layouts
+2. Add a md5 hash of the contents to the name for cache busting.
 3. Find a way to drop the dependency on node.js, to make it easier to setup
 
 [1]:http://handlebarsjs.com
