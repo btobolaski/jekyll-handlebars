@@ -1,3 +1,5 @@
+require 'liquid'
+
 module Jekyll
   module JekyllHandlebars
 
@@ -35,10 +37,12 @@ module Jekyll
   end
 
   module HandlebarsTags
-    def template input
-      "<script src=\"/assets/templates/#{input}.js\"></script>"
+    class Template < Liquid::Tag
+      def render context
+        "<script src=\"/assets/templates/#{context}.js\"></script>"
+      end
     end
   end
 end
 
-Liquid::Template.register_filter Jekyll::HandlebarsTags
+Liquid::Template.register_tag "template" Jekyll::HandlebarsTags::Template
