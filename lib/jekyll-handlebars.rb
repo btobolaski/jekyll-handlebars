@@ -39,7 +39,7 @@ module Jekyll
   module HandlebarsTags
     class Template < Liquid::Tag
       def render context
-        "<script src=\"/assets/templates/#{context}.js\"></script>"
+        "<script src=\"/assets/templates/#{@markup}.js\"></script>"
       end
     end
   end
